@@ -9,13 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ScrollView {
+            HStack {
+                VStack(content: {
+                    Text("Placeholder")
+                    Button("Proceed") {
+                        print("Bruce won the game but lost in the game of life.")
+                    }
+                    .padding(.all, 10.0)
+                    
+                    Text("Hello, world!")
+                })
+                Text("Hello, world!").foregroundColor(.blue)
+                    .padding()
+            }
+            ForEach(0..<6){
+                item in
+                Text("I'm number \(item+1)")
+                    .font(.title)
+                    .fontWeight(.black)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.red).padding(.all, 20.0)
+                    .background(Color.yellow.opacity(0.3))
+                    .padding(.vertical, 20)
+                    .onTapGesture {
+                        print("this is number \(item+1)")
+                    }
+            }
         }
-        .padding()
     }
 }
 
