@@ -18,7 +18,7 @@ struct ContentView: View {
                     }
                     .padding(.all, 10.0)
                     
-                    Text("Hello, world!")
+                    Text("Hello, worlds!")
                 })
                 Text("Hello, world!").foregroundColor(.blue)
                     .padding()
@@ -40,6 +40,21 @@ struct ContentView: View {
     }
 }
 
+struct ContentView2: View {
+    @State var name: String = ""
+    
+    var body: some View {
+        ScrollView {
+            Text("Hello")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            
+            TextField("Enter your name: ", text: $name).padding()
+            Text("Hello, \(name)")
+        }
+    }
+}
+
 #Preview {
-    ContentView()
+    ContentView2()
 }
